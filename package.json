@@ -1,11 +1,14 @@
 {
   "name": "rpc-tester",
   "version": "1.0.0",
-  "description": "",
+  "description": "Test RPC endpoints from chainlist.org",
   "main": "index.js",
-
+  "scripts": {
+    "start": "node index.js --chains-file=./chains"
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "packageManager": "pnpm@10.28.1"
+  "packageManager": "pnpm@10.28.1",
+  "type": "module"
 }

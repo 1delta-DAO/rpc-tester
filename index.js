@@ -1,6 +1,9 @@
 import fs from "fs"
 import path from "path"
+import { fileURLToPath } from "url"
 import dns from "dns"
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const { resolve: dnsResolve } = dns.promises
 
@@ -11,8 +14,7 @@ const HEX_RESULT = /^0x[0-9a-fA-F]+$/
 const BATCH_SIZE = 16
 
 function parseChainsFromFile(filePath) {
-  const scriptDir = path.dirname(new URL(import.meta.url).pathname)
-  const resolved = path.isAbsolute(filePath) ? filePath : path.join(scriptDir, filePath)
+  const resolved = path.isAbsolute(filePath) ? filePath : path.join(__dirname, filePath)
   const raw = fs.readFileSync(resolved, "utf8")
   const chainIds = raw
     .split(/[\n,]+/)

@@ -28,7 +28,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run check_chainlist_rpcs
-        run: node index.js --chains-file=chains
+        run: pnpm start
 
       - name: Commit and push rpcs
         run: |
