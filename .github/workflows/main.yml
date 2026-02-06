@@ -21,7 +21,7 @@ jobs:
           cache: "npm"
           
       - name: Run check_chainlist_rpcs
-        run: node script.js --chains-file=chains
+        run: node index.js --chains-file=chains
 
       - name: Commit and push rpcs
         run: |
