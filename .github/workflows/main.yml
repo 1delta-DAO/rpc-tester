@@ -8,13 +8,24 @@ on:
 jobs:
   check-rpcs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
+          
+      - name: Run check_chainlist_rpcs
+        run: node script.js --chains-file=chains
 
-      - name: Run script
-        run: node script.js --chains=42161,1,8453,10,137,146,43111,167000,1088,100,43114,34443,534352,1116,250,56,5000,59144,81457,8217,1868,999,130,747474,50,80094,25,40,169,2818,9745,1284,1329,143
+      - name: Commit and push rpcs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add rpcs/
+          git diff --staged --quiet || (git commit -m "chore: update rpcs from chainlist" && git push)
