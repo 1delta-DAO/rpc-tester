@@ -151,6 +151,7 @@ async function main() {
   let chainIndex = 0
   let skipped = 0
   let written = 0
+  const merged = Object.create(null)
 
   for (const chain of chains) {
     chainIndex++
@@ -160,6 +161,8 @@ async function main() {
 
     const filePath = path.join(outDir, `${chainId}.json`)
     if (skipExisting && fs.existsSync(filePath)) {
+      const existing = JSON.parse(fs.readFileSync(filePath, "utf8"))
+      merged[String(chainId)] = existing
       console.log("")
       console.log(`[${chainIndex}/${totalChains}] ${name} (chainId ${chainId}) — skipped (file exists: ${chainId}.json)`)
       skipped++
@@ -168,7 +171,9 @@ async function main() {
 
     const urls = getRpcs(chain)
     if (urls.length === 0) {
-      fs.writeFileSync(filePath, JSON.stringify({ name, chainId, rpcs: [] }, null, 2))
+      const payload = { name, chainId, rpcs: [] }
+      fs.writeFileSync(filePath, JSON.stringify(payload, null, 2))
+      merged[String(chainId)] = payload
       console.log("")
       console.log(`[${chainIndex}/${totalChains}] ${name} (chainId ${chainId}) — 0 HTTP(S) RPCs, written ${chainId}.json (empty)`)
       written++
@@ -209,9 +214,14 @@ async function main() {
 
     const payload = { name, chainId, rpcs }
     fs.writeFileSync(filePath, JSON.stringify(payload, null, 2))
+    merged[String(chainId)] = payload
     written++
     console.log(`  → ${rpcs.length} working RPC(s), written ${chainId}.json`)
   }
+
+  const mergedPath = path.join(outDir, "all.json")
+  fs.writeFileSync(mergedPath, JSON.stringify(merged, null, 2))
+  console.log("Merged file written:", mergedPath)
 
   console.log("")
   console.log("Done. Written:", written, "| Skipped:", skipped, "| RPCs checked:", totalRpcChecked, "| Working:", totalWorking)
