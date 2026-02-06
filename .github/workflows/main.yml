@@ -1,0 +1,20 @@
+name: Check chainlist RPCs
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  check-rpcs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Run script
+        run: node script.js --chains=42161,1,8453,10,137,146,43111,167000,1088,100,43114,34443,534352,1116,250,56,5000,59144,81457,8217,1868,999,130,747474,50,80094,25,40,169,2818,9745,1284,1329,143
