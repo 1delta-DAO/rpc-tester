@@ -10,20 +10,36 @@ const RPC_TIMEOUT_MS = 10000
 const HEX_RESULT = /^0x[0-9a-fA-F]+$/
 const BATCH_SIZE = 16
 
+function parseChainsFromFile(filePath) {
+  const scriptDir = path.dirname(new URL(import.meta.url).pathname)
+  const resolved = path.isAbsolute(filePath) ? filePath : path.join(scriptDir, filePath)
+  const raw = fs.readFileSync(resolved, "utf8")
+  const chainIds = raw
+    .split(/[\n,]+/)
+    .map((s) => parseInt(s.trim(), 10))
+    .filter((n) => !Number.isNaN(n))
+  return chainIds.length ? chainIds : null
+}
+
 function parseArgs() {
+  const chainsFile = process.argv.find((a) => a.startsWith("--chains-file="))
   const limitChains = process.argv.find((a) => a.startsWith("--chains="))
   const out = process.argv.find((a) => a.startsWith("--out="))
   const batchArg = process.argv.find((a) => a.startsWith("--batch="))
-  const chainIds = limitChains
-    ? limitChains
-        .split("=")[1]
-        .split(",")
-        .map((s) => parseInt(s.trim(), 10))
-        .filter((n) => !Number.isNaN(n))
-    : null
+  let chainIds = null
+  if (chainsFile) {
+    chainIds = parseChainsFromFile(chainsFile.split("=")[1])
+  } else if (limitChains) {
+    chainIds = limitChains
+      .split("=")[1]
+      .split(",")
+      .map((s) => parseInt(s.trim(), 10))
+      .filter((n) => !Number.isNaN(n))
+    chainIds = chainIds?.length ? chainIds : null
+  }
   const batch = batchArg ? parseInt(batchArg.split("=")[1], 10) : BATCH_SIZE
   return {
-    chainIds: chainIds?.length ? chainIds : null,
+    chainIds,
     outDir: out ? out.split("=")[1] : "./rpcs",
     skipExisting: process.argv.includes("--skip-existing"),
     batchSize: Number.isNaN(batch) || batch < 1 ? BATCH_SIZE : Math.min(batch, 128),
