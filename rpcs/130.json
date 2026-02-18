@@ -3,16 +3,18 @@
   "chainId": 130,
   "rpcs": [
     {
-      "url": "https://unichain.api.onfinality.io/public",
-      "supportsIpv6": false
-    },
-    {
       "url": "https://unichain-rpc.publicnode.com",
-      "supportsIpv6": true
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
     },
     {
       "url": "https://rpc.sentio.xyz/unichain-mainnet",
-      "supportsIpv6": true
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": false
     }
   ]
 }

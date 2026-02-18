@@ -13,6 +13,8 @@ const CONNECT_TIMEOUT_MS = 3000
 const RPC_TIMEOUT_MS = 10000
 const HEX_RESULT = /^0x[0-9a-fA-F]+$/
 const BATCH_SIZE = 16
+const DEPTH_BLOCKS = 50_000
+const TEST_ADDRESS = "0x0000000000000000000000000000000000000001"
 
 interface ChainlistChain {
   chainId?: number
@@ -30,6 +32,9 @@ interface ParsedArgs {
 interface RpcResult {
   url: string
   supportsIpv6: boolean
+  is_archive: boolean
+  supports_forking: boolean
+  is_fast_fork_capable: boolean
 }
 
 interface Payload {
@@ -116,25 +121,99 @@ async function checkConnect(url: string): Promise<boolean> {
   }
 }
 
-async function checkRpc(url: string): Promise<boolean> {
+interface JsonRpcResponse<T = unknown> {
+  result?: T
+  error?: { code?: number; message?: string; data?: string }
+}
+
+async function rpcCall<T>(url: string, method: string, params: unknown[], id: number): Promise<JsonRpcResponse<T> & { httpStatus?: number }> {
   try {
     const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        jsonrpc: "2.0",
-        method: "eth_blockNumber",
-        params: [],
-        id: 1,
-      }),
+      body: JSON.stringify({ jsonrpc: "2.0", method, params, id }),
       signal: AbortSignal.timeout(RPC_TIMEOUT_MS),
     })
-    const data = (await res.json()) as { result?: string }
-    const result = data?.result
-    return typeof result === "string" && HEX_RESULT.test(result)
+    const data = (await res.json()) as JsonRpcResponse<T>
+    return { ...data, httpStatus: res.status }
   } catch {
-    return false
+    return {}
   }
+}
+
+function isPrunedError(error: { message?: string; data?: string } | undefined): boolean {
+  if (!error) return false
+  const msg = String(error.message ?? "").toLowerCase()
+  const data = String(error.data ?? "").toLowerCase()
+  const combined = msg + " " + data
+  return (
+    combined.includes("missing trie node") ||
+    combined.includes("state not available") ||
+    combined.includes("projected block is too old")
+  )
+}
+
+function isMethodRestricted(error: { message?: string; data?: string } | undefined, httpStatus?: number): boolean {
+  if (httpStatus === 405) return true
+  if (!error) return false
+  const msg = String(error.message ?? "").toLowerCase()
+  const data = String(error.data ?? "").toLowerCase()
+  const combined = msg + " " + data
+  return combined.includes("method not allowed") || combined.includes("405")
+}
+
+function hexBlockTag(blockNumber: number): string {
+  return "0x" + blockNumber.toString(16)
+}
+
+async function getCurrentBlock(url: string): Promise<number | null> {
+  const out = await rpcCall<string>(url, "eth_blockNumber", [], 1)
+  if (out.error || out.result === undefined) return null
+  const result = out.result
+  if (typeof result !== "string" || !HEX_RESULT.test(result)) return null
+  return parseInt(result, 16)
+}
+
+async function checkRpc(url: string): Promise<boolean> {
+  const block = await getCurrentBlock(url)
+  return block !== null
+}
+
+interface StateTestResult {
+  supports_forking: boolean
+  is_archive: boolean
+  is_fast_fork_capable: boolean
+}
+
+async function runStateTests(url: string, targetBlock: number): Promise<StateTestResult> {
+  const blockTag = hexBlockTag(targetBlock)
+  const out: StateTestResult = { supports_forking: false, is_archive: false, is_fast_fork_capable: false }
+
+  const t1 = await rpcCall<string>(url, "eth_getBalance", [TEST_ADDRESS, blockTag], 10)
+  if (t1.error) {
+    if (isMethodRestricted(t1.error, t1.httpStatus)) out.supports_forking = false
+    else if (isPrunedError(t1.error)) out.supports_forking = false
+  } else if (typeof t1.result === "string" && HEX_RESULT.test(t1.result)) {
+    out.supports_forking = true
+  }
+
+  const t2 = await rpcCall<string>(url, "eth_getStorageAt", [TEST_ADDRESS, "0x0", blockTag], 11)
+  if (t2.error) {
+    if (isMethodRestricted(t2.error, t2.httpStatus)) out.is_archive = false
+    else if (isPrunedError(t2.error)) out.is_archive = false
+  } else if (typeof t2.result === "string" && HEX_RESULT.test(t2.result)) {
+    out.is_archive = true
+  }
+
+  const t3 = await rpcCall<{ accountProof?: unknown[] }>(url, "eth_getProof", [TEST_ADDRESS, [], blockTag], 12)
+  if (t3.error) {
+    if (isMethodRestricted(t3.error, t3.httpStatus)) out.is_fast_fork_capable = false
+    else out.is_fast_fork_capable = false
+  } else if (t3.result && Array.isArray((t3.result as { accountProof?: unknown[] }).accountProof)) {
+    out.is_fast_fork_capable = true
+  }
+
+  return out
 }
 
 async function checkIpv6(host: string): Promise<boolean> {
@@ -191,7 +270,16 @@ async function main(): Promise<void> {
 
     const filePath = path.join(outDir, `${chainId}.json`)
     if (skipExisting && fs.existsSync(filePath)) {
-      const existing = JSON.parse(fs.readFileSync(filePath, "utf8")) as Payload
+      const raw = JSON.parse(fs.readFileSync(filePath, "utf8")) as Payload
+      const existing: Payload = {
+        ...raw,
+        rpcs: raw.rpcs.map((r) => ({
+          ...r,
+          is_archive: (r as RpcResult).is_archive ?? false,
+          supports_forking: (r as RpcResult).supports_forking ?? false,
+          is_fast_fork_capable: (r as RpcResult).is_fast_fork_capable ?? false,
+        })),
+      }
       merged[String(chainId)] = existing
       console.log("")
       console.log(`[${chainIndex}/${totalChains}] ${name} (chainId ${chainId}) — skipped (file exists: ${chainId}.json)`)
@@ -218,11 +306,21 @@ async function main(): Promise<void> {
         async (): Promise<RpcResult | null> => {
           const connected = await checkConnect(url)
           if (!connected) return null
-          const rpcOk = await checkRpc(url)
-          if (!rpcOk) return null
+          const current = await getCurrentBlock(url)
+          if (current === null) return null
+          let is_archive = false
+          let supports_forking = false
+          let is_fast_fork_capable = false
+          if (current >= DEPTH_BLOCKS) {
+            const target = Math.max(0, current - DEPTH_BLOCKS)
+            const state = await runStateTests(url, target)
+            is_archive = state.is_archive
+            supports_forking = state.supports_forking
+            is_fast_fork_capable = state.is_fast_fork_capable
+          }
           const host = extractHost(url)
           const supportsIpv6 = await checkIpv6(host)
-          return { url, supportsIpv6 }
+          return { url, supportsIpv6, is_archive, supports_forking, is_fast_fork_capable }
         }
     )
     const outcomes = await batchCall(taskFns, concurrency)
@@ -241,6 +339,9 @@ async function main(): Promise<void> {
       console.log("    connect: ok")
       console.log("    eth_blockNumber: ok")
       console.log("    IPv6:", result.supportsIpv6 ? "yes" : "no")
+      console.log("    supports_forking:", result.supports_forking ? "yes" : "no")
+      console.log("    is_archive:", result.is_archive ? "yes" : "no")
+      console.log("    is_fast_fork_capable:", result.is_fast_fork_capable ? "yes" : "no")
       rpcs.push(result)
       totalWorking++
     }

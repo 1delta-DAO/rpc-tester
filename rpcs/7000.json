@@ -3,20 +3,11 @@
   "chainId": 7000,
   "rpcs": [
     {
-      "url": "https://zetachain-evm.blockpi.network/v1/rpc/public",
-      "supportsIpv6": false
-    },
-    {
-      "url": "https://zetachain-mainnet.g.allthatnode.com/archive/evm",
-      "supportsIpv6": false
-    },
-    {
       "url": "https://zeta-chain.drpc.org",
-      "supportsIpv6": true
-    },
-    {
-      "url": "https://7000.rpc.thirdweb.com",
-      "supportsIpv6": true
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
     }
   ]
 }

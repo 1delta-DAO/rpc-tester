@@ -4,23 +4,38 @@
   "rpcs": [
     {
       "url": "https://babel-api.mainnet.iotex.io",
-      "supportsIpv6": true
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
     },
     {
       "url": "https://babel-api.mainnet.iotex.one",
-      "supportsIpv6": true
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": true,
+      "is_fast_fork_capable": false
     },
     {
       "url": "https://babel-api.fastblocks.io",
-      "supportsIpv6": true
-    },
-    {
-      "url": "https://iotex-network.rpc.thirdweb.com",
-      "supportsIpv6": true
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": true,
+      "is_fast_fork_capable": false
     },
     {
       "url": "https://iotex.api.onfinality.io/public",
-      "supportsIpv6": false
+      "supportsIpv6": false,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://api-iotex-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
+      "supportsIpv6": false,
+      "is_archive": true,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
     }
   ]
 }
