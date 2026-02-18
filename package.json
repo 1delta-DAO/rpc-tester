@@ -2,13 +2,20 @@
   "name": "rpc-tester",
   "version": "1.0.0",
   "description": "Test RPC endpoints from chainlist.org",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "node index.js --chains-file=./chains"
+    "build": "tsc", "start": "node dist/index.js --chains-file=../chains"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "packageManager": "pnpm@10.28.1",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "undici": "^7.22.0"
+  }
 }

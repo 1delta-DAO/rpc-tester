@@ -2,6 +2,7 @@ import fs from "fs"
 import path from "path"
 import { fileURLToPath } from "url"
 import dns from "dns"
+import { fetch } from "undici"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -13,7 +14,31 @@ const RPC_TIMEOUT_MS = 10000
 const HEX_RESULT = /^0x[0-9a-fA-F]+$/
 const BATCH_SIZE = 16
 
-function parseChainsFromFile(filePath) {
+interface ChainlistChain {
+  chainId?: number
+  name?: string
+  rpc?: (string | { url?: string })[]
+}
+
+interface ParsedArgs {
+  chainIds: number[] | null
+  outDir: string
+  skipExisting: boolean
+  batchSize: number
+}
+
+interface RpcResult {
+  url: string
+  supportsIpv6: boolean
+}
+
+interface Payload {
+  name: string
+  chainId: number
+  rpcs: RpcResult[]
+}
+
+function parseChainsFromFile(filePath: string): number[] | null {
   const resolved = path.isAbsolute(filePath) ? filePath : path.join(__dirname, filePath)
   const raw = fs.readFileSync(resolved, "utf8")
   const chainIds = raw
@@ -23,12 +48,12 @@ function parseChainsFromFile(filePath) {
   return chainIds.length ? chainIds : null
 }
 
-function parseArgs() {
+function parseArgs(): ParsedArgs {
   const chainsFile = process.argv.find((a) => a.startsWith("--chains-file="))
   const limitChains = process.argv.find((a) => a.startsWith("--chains="))
   const out = process.argv.find((a) => a.startsWith("--out="))
   const batchArg = process.argv.find((a) => a.startsWith("--batch="))
-  let chainIds = null
+  let chainIds: number[] | null = null
   if (chainsFile) {
     chainIds = parseChainsFromFile(chainsFile.split("=")[1])
   } else if (limitChains) {
@@ -48,8 +73,8 @@ function parseArgs() {
   }
 }
 
-async function batchCall(tasks, concurrency) {
-  const results = []
+async function batchCall<T>(tasks: (() => Promise<T>)[], concurrency: number): Promise<T[]> {
+  const results: Promise<T>[] = []
   let index = 0
   async function worker() {
     while (index < tasks.length) {
@@ -62,17 +87,17 @@ async function batchCall(tasks, concurrency) {
   return Promise.all(results)
 }
 
-function getRpcs(chain) {
+function getRpcs(chain: ChainlistChain): string[] {
   const rpc = chain.rpc || []
-  const urls = []
+  const urls: string[] = []
   for (const entry of rpc) {
     const url = typeof entry === "string" ? entry : entry?.url
-     urls.push(url)
+    if (url) urls.push(url)
   }
   return urls
 }
 
-function extractHost(url) {
+function extractHost(url: string): string {
   try {
     return new URL(url).hostname
   } catch {
@@ -80,7 +105,7 @@ function extractHost(url) {
   }
 }
 
-async function checkConnect(url) {
+async function checkConnect(url: string): Promise<boolean> {
   try {
     await fetch(url, {
       signal: AbortSignal.timeout(CONNECT_TIMEOUT_MS),
@@ -91,7 +116,7 @@ async function checkConnect(url) {
   }
 }
 
-async function checkRpc(url) {
+async function checkRpc(url: string): Promise<boolean> {
   try {
     const res = await fetch(url, {
       method: "POST",
@@ -104,7 +129,7 @@ async function checkRpc(url) {
       }),
       signal: AbortSignal.timeout(RPC_TIMEOUT_MS),
     })
-    const data = await res.json()
+    const data = (await res.json()) as { result?: string }
     const result = data?.result
     return typeof result === "string" && HEX_RESULT.test(result)
   } catch {
@@ -112,17 +137,20 @@ async function checkRpc(url) {
   }
 }
 
-async function checkIpv6(host) {
+async function checkIpv6(host: string): Promise<boolean> {
   if (!host) return false
   try {
-    const aaaa = await Promise.race([dnsResolve(host, "AAAA"), new Promise((_, rej) => setTimeout(() => rej(new Error("timeout")), 5000))])
+    const aaaa = await Promise.race([
+      dnsResolve(host, "AAAA"),
+      new Promise<never>((_, rej) => setTimeout(() => rej(new Error("timeout")), 5000)),
+    ])
     return Array.isArray(aaaa) && aaaa.length > 0
   } catch {
     return false
   }
 }
 
-async function main() {
+async function main(): Promise<void> {
   const { chainIds, outDir, skipExisting, batchSize: concurrency } = parseArgs()
 
   fs.mkdirSync(outDir, { recursive: true })
@@ -133,7 +161,7 @@ async function main() {
   console.log("Fetching chainlist from", FETCH_URL)
   const res = await fetch(FETCH_URL)
   if (!res.ok) throw new Error(`Fetch failed: ${res.status}`)
-  const allChains = await res.json()
+  const allChains = (await res.json()) as ChainlistChain[]
   if (!Array.isArray(allChains)) throw new Error("Expected array from chainlist")
   const chainIdSet = chainIds != null ? new Set(chainIds) : null
   const chains = chainIdSet
@@ -153,17 +181,17 @@ async function main() {
   let chainIndex = 0
   let skipped = 0
   let written = 0
-  const merged = Object.create(null)
+  const merged: Record<string, Payload> = Object.create(null)
 
   for (const chain of chains) {
     chainIndex++
     const name = chain.name ?? "unknown"
     const chainId = chain.chainId
-    if (chainId == null || chainId === "") continue
+    if (chainId == null) continue
 
     const filePath = path.join(outDir, `${chainId}.json`)
     if (skipExisting && fs.existsSync(filePath)) {
-      const existing = JSON.parse(fs.readFileSync(filePath, "utf8"))
+      const existing = JSON.parse(fs.readFileSync(filePath, "utf8")) as Payload
       merged[String(chainId)] = existing
       console.log("")
       console.log(`[${chainIndex}/${totalChains}] ${name} (chainId ${chainId}) — skipped (file exists: ${chainId}.json)`)
@@ -173,7 +201,7 @@ async function main() {
 
     const urls = getRpcs(chain)
     if (urls.length === 0) {
-      const payload = { name, chainId, rpcs: [] }
+      const payload: Payload = { name, chainId, rpcs: [] }
       fs.writeFileSync(filePath, JSON.stringify(payload, null, 2))
       merged[String(chainId)] = payload
       console.log("")
@@ -185,17 +213,20 @@ async function main() {
     console.log("")
     console.log(`[${chainIndex}/${totalChains}] ${name} (chainId ${chainId}) — ${urls.length} HTTP(S) RPCs (parallel, concurrency ${concurrency})`)
 
-    const taskFns = urls.map((url) => async () => {
-      const connected = await checkConnect(url)
-      if (!connected) return null
-      const rpcOk = await checkRpc(url)
-      if (!rpcOk) return null
-      const host = extractHost(url)
-      const supportsIpv6 = await checkIpv6(host)
-      return { url, supportsIpv6 }
-    })
+    const taskFns = urls.map(
+      (url) =>
+        async (): Promise<RpcResult | null> => {
+          const connected = await checkConnect(url)
+          if (!connected) return null
+          const rpcOk = await checkRpc(url)
+          if (!rpcOk) return null
+          const host = extractHost(url)
+          const supportsIpv6 = await checkIpv6(host)
+          return { url, supportsIpv6 }
+        }
+    )
     const outcomes = await batchCall(taskFns, concurrency)
-    const rpcs = []
+    const rpcs: RpcResult[] = []
 
     for (let idx = 0; idx < urls.length; idx++) {
       totalRpcChecked++
@@ -214,7 +245,7 @@ async function main() {
       totalWorking++
     }
 
-    const payload = { name, chainId, rpcs }
+    const payload: Payload = { name, chainId, rpcs }
     fs.writeFileSync(filePath, JSON.stringify(payload, null, 2))
     merged[String(chainId)] = payload
     written++

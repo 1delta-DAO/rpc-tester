@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build TypeScript
+        run: pnpm run build
+
       - name: Run check_chainlist_rpcs
         run: pnpm start
 
