@@ -3,6 +3,13 @@
   "chainId": 167000,
   "rpcs": [
     {
+      "url": "https://rpc.taiko.xyz",
+      "supportsIpv6": false,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
+    },
+    {
       "url": "https://rpc.ankr.com/taiko",
       "supportsIpv6": true,
       "is_archive": true,
@@ -12,9 +19,16 @@
     {
       "url": "https://taiko.drpc.org",
       "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://taiko-mainnet.gateway.tenderly.co",
+      "supportsIpv6": false,
       "is_archive": true,
       "supports_forking": true,
-      "is_fast_fork_capable": true
+      "is_fast_fork_capable": false
     },
     {
       "url": "https://taiko-json-rpc.stakely.io",
@@ -25,6 +39,13 @@
     },
     {
       "url": "https://taiko.api.pocket.network",
+      "supportsIpv6": false,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
+    },
+    {
+      "url": "https://rpc.mainnet.taiko.xyz",
       "supportsIpv6": false,
       "is_archive": true,
       "supports_forking": true,

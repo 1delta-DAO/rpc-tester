@@ -3,6 +3,13 @@
   "chainId": 81457,
   "rpcs": [
     {
+      "url": "https://rpc.blast.io",
+      "supportsIpv6": false,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": false
+    },
+    {
       "url": "https://blast.din.dev/rpc",
       "supportsIpv6": true,
       "is_archive": true,
@@ -17,6 +24,20 @@
       "is_fast_fork_capable": false
     },
     {
+      "url": "https://blast.drpc.org",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
+    },
+    {
+      "url": "https://blast.gateway.tenderly.co",
+      "supportsIpv6": false,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
+    },
+    {
       "url": "https://blast-public.nodies.app",
       "supportsIpv6": true,
       "is_archive": true,
@@ -26,7 +47,7 @@
     {
       "url": "https://blast.api.pocket.network",
       "supportsIpv6": false,
-      "is_archive": true,
+      "is_archive": false,
       "supports_forking": true,
       "is_fast_fork_capable": false
     },
@@ -35,7 +56,14 @@
       "supportsIpv6": false,
       "is_archive": false,
       "supports_forking": false,
-      "is_fast_fork_capable": false
+      "is_fast_fork_capable": true
+    },
+    {
+      "url": "https://rpc.sentio.xyz/blast-mainnet",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
     }
   ]
 }
