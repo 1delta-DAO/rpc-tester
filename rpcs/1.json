@@ -3,6 +3,13 @@
   "chainId": 1,
   "rpcs": [
     {
+      "url": "https://eth.llamarpc.com",
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
+    },
+    {
       "url": "https://eth-mainnet.nodereal.io/v1/1659dfb40aa24bbb8153a677b98064d7",
       "supportsIpv6": false,
       "is_archive": true,
@@ -19,8 +26,8 @@
     {
       "url": "https://1rpc.io/eth",
       "supportsIpv6": false,
-      "is_archive": false,
-      "supports_forking": false,
+      "is_archive": true,
+      "supports_forking": true,
       "is_fast_fork_capable": false
     },
     {
@@ -133,34 +140,6 @@
       "supportsIpv6": true,
       "is_archive": false,
       "supports_forking": false,
-      "is_fast_fork_capable": false
-    },
-    {
-      "url": "https://ethereum.rpc.subquery.network/public",
-      "supportsIpv6": false,
-      "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": true
-    },
-    {
-      "url": "https://eth.blockrazor.xyz",
-      "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": false,
-      "is_fast_fork_capable": false
-    },
-    {
-      "url": "https://eth1.lava.build",
-      "supportsIpv6": true,
-      "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": false
-    },
-    {
-      "url": "https://eth.api.onfinality.io/public",
-      "supportsIpv6": false,
-      "is_archive": true,
-      "supports_forking": true,
       "is_fast_fork_capable": false
     }
   ]
