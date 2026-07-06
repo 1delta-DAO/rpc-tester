@@ -3,25 +3,11 @@
   "chainId": 42161,
   "rpcs": [
     {
-      "url": "https://rpc.nodeflare.app/arb/public",
-      "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": false,
-      "is_fast_fork_capable": false
-    },
-    {
       "url": "https://arb1.arbitrum.io/rpc",
       "supportsIpv6": true,
       "is_archive": true,
       "supports_forking": true,
       "is_fast_fork_capable": false
-    },
-    {
-      "url": "https://1rpc.io/arb",
-      "supportsIpv6": true,
-      "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": true
     },
     {
       "url": "https://arbitrum-one-public.nodies.app",
@@ -52,11 +38,18 @@
       "is_fast_fork_capable": false
     },
     {
+      "url": "https://api.zan.top/arb-one",
+      "supportsIpv6": false,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
+    },
+    {
       "url": "https://arbitrum.drpc.org",
       "supportsIpv6": true,
       "is_archive": true,
       "supports_forking": true,
-      "is_fast_fork_capable": true
+      "is_fast_fork_capable": false
     },
     {
       "url": "https://arbitrum.gateway.tenderly.co",
@@ -70,11 +63,11 @@
       "supportsIpv6": true,
       "is_archive": true,
       "supports_forking": true,
-      "is_fast_fork_capable": false
+      "is_fast_fork_capable": true
     },
     {
-      "url": "https://arb-one-mainnet.gateway.tatum.io",
-      "supportsIpv6": true,
+      "url": "https://arbitrum.api.onfinality.io/public",
+      "supportsIpv6": false,
       "is_archive": true,
       "supports_forking": true,
       "is_fast_fork_capable": true
