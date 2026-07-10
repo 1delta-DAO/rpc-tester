@@ -3,13 +3,6 @@
   "chainId": 42161,
   "rpcs": [
     {
-      "url": "https://rpc.nodeflare.app/arb/public",
-      "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": false,
-      "is_fast_fork_capable": false
-    },
-    {
       "url": "https://arb1.arbitrum.io/rpc",
       "supportsIpv6": true,
       "is_archive": false,
@@ -47,14 +40,14 @@
     {
       "url": "https://arbitrum.meowrpc.com",
       "supportsIpv6": false,
-      "is_archive": false,
+      "is_archive": true,
       "supports_forking": false,
       "is_fast_fork_capable": false
     },
     {
       "url": "https://api.zan.top/arb-one",
       "supportsIpv6": false,
-      "is_archive": false,
+      "is_archive": true,
       "supports_forking": true,
       "is_fast_fork_capable": true
     },
@@ -63,7 +56,7 @@
       "supportsIpv6": true,
       "is_archive": true,
       "supports_forking": true,
-      "is_fast_fork_capable": false
+      "is_fast_fork_capable": true
     },
     {
       "url": "https://arbitrum.gateway.tenderly.co",
@@ -77,14 +70,21 @@
       "supportsIpv6": true,
       "is_archive": true,
       "supports_forking": true,
+      "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://arb-one-mainnet.gateway.tatum.io",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
       "is_fast_fork_capable": true
     },
     {
       "url": "https://arb-one.api.pocket.network",
       "supportsIpv6": false,
       "is_archive": true,
-      "supports_forking": false,
-      "is_fast_fork_capable": false
+      "supports_forking": true,
+      "is_fast_fork_capable": true
     },
     {
       "url": "https://public-arb-mainnet.fastnode.io",
@@ -96,6 +96,13 @@
     {
       "url": "https://arbitrum-one.rpc.sentio.xyz",
       "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
+    },
+    {
+      "url": "https://arbitrum-one-mainnet.gateway.tatum.io",
+      "supportsIpv6": false,
       "is_archive": true,
       "supports_forking": true,
       "is_fast_fork_capable": true
