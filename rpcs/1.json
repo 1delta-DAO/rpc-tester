@@ -3,13 +3,6 @@
   "chainId": 1,
   "rpcs": [
     {
-      "url": "https://rpc.nodeflare.app/eth/public",
-      "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": true,
-      "is_fast_fork_capable": false
-    },
-    {
       "url": "https://eth-mainnet.nodereal.io/v1/1659dfb40aa24bbb8153a677b98064d7",
       "supportsIpv6": false,
       "is_archive": true,
@@ -104,11 +97,18 @@
       "url": "https://eth.meowrpc.com",
       "supportsIpv6": false,
       "is_archive": false,
-      "supports_forking": false,
+      "supports_forking": true,
       "is_fast_fork_capable": false
     },
     {
       "url": "https://mainnet.gateway.tenderly.co",
+      "supportsIpv6": false,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://gateway.tenderly.co/public/mainnet",
       "supportsIpv6": false,
       "is_archive": true,
       "supports_forking": true,
