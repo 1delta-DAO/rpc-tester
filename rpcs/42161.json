@@ -3,14 +3,14 @@
   "chainId": 42161,
   "rpcs": [
     {
-      "url": "https://rpc.nodeflare.app/arb/public",
+      "url": "https://arb1.arbitrum.io/rpc",
       "supportsIpv6": true,
       "is_archive": false,
       "supports_forking": false,
       "is_fast_fork_capable": false
     },
     {
-      "url": "https://arb1.arbitrum.io/rpc",
+      "url": "https://public.1rpc.io/arb",
       "supportsIpv6": true,
       "is_archive": false,
       "supports_forking": false,
@@ -55,8 +55,8 @@
       "url": "https://arbitrum.drpc.org",
       "supportsIpv6": true,
       "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": true
+      "supports_forking": false,
+      "is_fast_fork_capable": false
     },
     {
       "url": "https://arbitrum.gateway.tenderly.co",
@@ -73,17 +73,10 @@
       "is_fast_fork_capable": false
     },
     {
-      "url": "https://arb-one-mainnet.gateway.tatum.io",
-      "supportsIpv6": true,
-      "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": true
-    },
-    {
       "url": "https://arb-one.api.pocket.network",
       "supportsIpv6": false,
-      "is_archive": true,
-      "supports_forking": true,
+      "is_archive": false,
+      "supports_forking": false,
       "is_fast_fork_capable": false
     },
     {
@@ -99,13 +92,6 @@
       "is_archive": true,
       "supports_forking": true,
       "is_fast_fork_capable": true
-    },
-    {
-      "url": "https://arb-rpc.keccak.io",
-      "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": false,
-      "is_fast_fork_capable": false
     }
   ]
 }
