@@ -3,13 +3,6 @@
   "chainId": 1284,
   "rpcs": [
     {
-      "url": "https://lb.routeme.sh/rpc/evm/1284",
-      "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": false,
-      "is_fast_fork_capable": false
-    },
-    {
       "url": "https://rpc.api.moonbeam.network",
       "supportsIpv6": true,
       "is_archive": true,
@@ -18,6 +11,13 @@
     },
     {
       "url": "https://moonbeam.api.onfinality.io/public",
+      "supportsIpv6": false,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://moonbeam.unitedbloc.com",
       "supportsIpv6": false,
       "is_archive": true,
       "supports_forking": true,
@@ -34,7 +34,7 @@
       "url": "https://moonbeam.drpc.org",
       "supportsIpv6": true,
       "is_archive": true,
-      "supports_forking": false,
+      "supports_forking": true,
       "is_fast_fork_capable": false
     },
     {
@@ -48,7 +48,7 @@
       "url": "https://moonbeam.drpc.org",
       "supportsIpv6": true,
       "is_archive": true,
-      "supports_forking": false,
+      "supports_forking": true,
       "is_fast_fork_capable": false
     },
     {
