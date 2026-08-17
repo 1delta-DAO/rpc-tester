@@ -3,13 +3,6 @@
   "chainId": 56,
   "rpcs": [
     {
-      "url": "https://lb.routeme.sh/rpc/evm/56",
-      "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": true,
-      "is_fast_fork_capable": false
-    },
-    {
       "url": "https://rpc.nodeflare.app/bnb/public",
       "supportsIpv6": true,
       "is_archive": false,
@@ -108,13 +101,6 @@
       "is_fast_fork_capable": false
     },
     {
-      "url": "https://rpc-bsc.48.club",
-      "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": false,
-      "is_fast_fork_capable": false
-    },
-    {
       "url": "https://0.48.club",
       "supportsIpv6": true,
       "is_archive": false,
@@ -137,6 +123,13 @@
     },
     {
       "url": "https://bsc.rpc.blxrbdn.com",
+      "supportsIpv6": false,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://bnb.api.onfinality.io/public",
       "supportsIpv6": false,
       "is_archive": false,
       "supports_forking": false,
@@ -187,7 +180,7 @@
     {
       "url": "https://bsc.api.pocket.network",
       "supportsIpv6": false,
-      "is_archive": false,
+      "is_archive": true,
       "supports_forking": false,
       "is_fast_fork_capable": false
     },
