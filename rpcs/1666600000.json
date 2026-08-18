@@ -1,5 +1,41 @@
 {
   "name": "Harmony Mainnet Shard 0",
   "chainId": 1666600000,
-  "rpcs": []
+  "rpcs": [
+    {
+      "url": "https://api.harmony.one",
+      "supportsIpv6": false,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
+    },
+    {
+      "url": "https://api.s0.t.hmny.io",
+      "supportsIpv6": false,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
+    },
+    {
+      "url": "https://public.1rpc.io/one",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
+    },
+    {
+      "url": "https://one-mainnet-s0.gateway.tatum.io",
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://1rpc.io/one",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
+    }
+  ]
 }
