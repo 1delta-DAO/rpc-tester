@@ -3,11 +3,18 @@
   "chainId": 42161,
   "rpcs": [
     {
-      "url": "https://arb1.arbitrum.io/rpc",
+      "url": "https://rpc.nodeflare.app/arb/public",
       "supportsIpv6": true,
       "is_archive": false,
       "supports_forking": false,
       "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://arb1.arbitrum.io/rpc",
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
     },
     {
       "url": "https://public.1rpc.io/arb",
@@ -21,7 +28,7 @@
       "supportsIpv6": true,
       "is_archive": true,
       "supports_forking": true,
-      "is_fast_fork_capable": false
+      "is_fast_fork_capable": true
     },
     {
       "url": "https://arbitrum-one.public.blastapi.io",
@@ -48,7 +55,7 @@
       "url": "https://api.zan.top/arb-one",
       "supportsIpv6": false,
       "is_archive": true,
-      "supports_forking": false,
+      "supports_forking": true,
       "is_fast_fork_capable": true
     },
     {
@@ -69,19 +76,33 @@
       "url": "https://arb1.lava.build",
       "supportsIpv6": true,
       "is_archive": true,
-      "supports_forking": false,
-      "is_fast_fork_capable": false
+      "supports_forking": true,
+      "is_fast_fork_capable": true
+    },
+    {
+      "url": "https://arb-one-mainnet.gateway.tatum.io",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
     },
     {
       "url": "https://arb-one.api.pocket.network",
       "supportsIpv6": false,
-      "is_archive": true,
-      "supports_forking": false,
-      "is_fast_fork_capable": false
+      "is_archive": false,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
     },
     {
       "url": "https://public-arb-mainnet.fastnode.io",
       "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
+    },
+    {
+      "url": "https://api-arbitrum-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
+      "supportsIpv6": false,
       "is_archive": false,
       "supports_forking": false,
       "is_fast_fork_capable": false
@@ -97,7 +118,7 @@
       "url": "https://rpc.swiftnodes.io/rpc/arbitrum",
       "supportsIpv6": false,
       "is_archive": false,
-      "supports_forking": true,
+      "supports_forking": false,
       "is_fast_fork_capable": false
     },
     {
