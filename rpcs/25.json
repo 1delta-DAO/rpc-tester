@@ -3,45 +3,52 @@
   "chainId": 25,
   "rpcs": [
     {
-      "url": "https://evm.cronos.org",
+      "url": "https://lb.routeme.sh/rpc/evm/25",
       "supportsIpv6": true,
       "is_archive": false,
       "supports_forking": false,
       "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://evm.cronos.org",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
     },
     {
       "url": "https://public.1rpc.io/cro",
       "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": false,
-      "is_fast_fork_capable": false
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
     },
     {
       "url": "https://cronos.drpc.org",
       "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": false,
-      "is_fast_fork_capable": false
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
     },
     {
       "url": "https://rpc.vvs.finance",
       "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": false,
-      "is_fast_fork_capable": false
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
     },
     {
       "url": "https://cronos.rpc.sentio.xyz",
       "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": false,
+      "is_archive": true,
+      "supports_forking": true,
       "is_fast_fork_capable": false
     },
     {
       "url": "https://rpc.swiftnodes.io/rpc/cronos",
       "supportsIpv6": false,
       "is_archive": false,
-      "supports_forking": false,
+      "supports_forking": true,
       "is_fast_fork_capable": false
     }
   ]
