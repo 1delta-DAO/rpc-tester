@@ -4,13 +4,6 @@
     "chainId": 1,
     "rpcs": [
       {
-        "url": "https://lb.routeme.sh/rpc/evm/1",
-        "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": false,
-        "is_fast_fork_capable": true
-      },
-      {
         "url": "https://one.valve.city/rpc/vk_demo/evm/1",
         "supportsIpv6": true,
         "is_archive": true,
@@ -39,11 +32,18 @@
         "is_fast_fork_capable": false
       },
       {
+        "url": "https://public.1rpc.io/eth",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": false,
+        "is_fast_fork_capable": false
+      },
+      {
         "url": "https://rpc.mevblocker.io",
         "supportsIpv6": true,
         "is_archive": true,
         "supports_forking": true,
-        "is_fast_fork_capable": false
+        "is_fast_fork_capable": true
       },
       {
         "url": "https://virginia.rpc.blxrbdn.com",
@@ -93,6 +93,27 @@
         "is_archive": false,
         "supports_forking": false,
         "is_fast_fork_capable": false
+      },
+      {
+        "url": "https://eth-mainnet.rpcfast.com?api_key=xbhWBI1Wkguk8SNMu1bvvLurPGLXmgwYeC4S6g2H7WdwFigZSmPWVZRxrskEQwIf",
+        "supportsIpv6": true,
+        "is_archive": true,
+        "supports_forking": true,
+        "is_fast_fork_capable": false
+      },
+      {
+        "url": "https://eth.meowrpc.com",
+        "supportsIpv6": false,
+        "is_archive": false,
+        "supports_forking": false,
+        "is_fast_fork_capable": false
+      },
+      {
+        "url": "https://mainnet.gateway.tenderly.co",
+        "supportsIpv6": false,
+        "is_archive": true,
+        "supports_forking": true,
+        "is_fast_fork_capable": false
       }
     ]
   },
@@ -100,6 +121,13 @@
     "name": "OP Mainnet",
     "chainId": 10,
     "rpcs": [
+      {
+        "url": "https://lb.routeme.sh/rpc/evm/10",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": false,
+        "is_fast_fork_capable": false
+      },
       {
         "url": "https://mainnet.optimism.io",
         "supportsIpv6": false,
@@ -111,7 +139,7 @@
         "url": "https://public.1rpc.io/op",
         "supportsIpv6": true,
         "is_archive": false,
-        "supports_forking": true,
+        "supports_forking": false,
         "is_fast_fork_capable": false
       },
       {
@@ -126,13 +154,6 @@
         "supportsIpv6": true,
         "is_archive": true,
         "supports_forking": true,
-        "is_fast_fork_capable": false
-      },
-      {
-        "url": "https://optimism.api.onfinality.io/public",
-        "supportsIpv6": false,
-        "is_archive": false,
-        "supports_forking": false,
         "is_fast_fork_capable": false
       },
       {
@@ -173,7 +194,7 @@
       {
         "url": "https://op.api.pocket.network",
         "supportsIpv6": false,
-        "is_archive": false,
+        "is_archive": true,
         "supports_forking": true,
         "is_fast_fork_capable": false
       },
@@ -195,7 +216,7 @@
         "url": "https://rpc.swiftnodes.io/rpc/optimism",
         "supportsIpv6": false,
         "is_archive": false,
-        "supports_forking": true,
+        "supports_forking": false,
         "is_fast_fork_capable": false
       },
       {
@@ -237,7 +258,7 @@
         "supportsIpv6": true,
         "is_archive": true,
         "supports_forking": true,
-        "is_fast_fork_capable": false
+        "is_fast_fork_capable": true
       },
       {
         "url": "https://cronos.drpc.org",
@@ -264,8 +285,8 @@
         "url": "https://rpc.swiftnodes.io/rpc/cronos",
         "supportsIpv6": false,
         "is_archive": false,
-        "supports_forking": false,
-        "is_fast_fork_capable": true
+        "supports_forking": true,
+        "is_fast_fork_capable": false
       },
       {
         "url": "https://25.rpc.thirdweb.com",
@@ -318,7 +339,7 @@
         "url": "https://rpc.xdcrpc.com",
         "supportsIpv6": false,
         "is_archive": true,
-        "supports_forking": false,
+        "supports_forking": true,
         "is_fast_fork_capable": false
       },
       {
@@ -339,7 +360,7 @@
         "url": "https://erpc.xdcrpc.com",
         "supportsIpv6": false,
         "is_archive": true,
-        "supports_forking": false,
+        "supports_forking": true,
         "is_fast_fork_capable": false
       },
       {
@@ -375,6 +396,13 @@
         "supportsIpv6": true,
         "is_archive": true,
         "supports_forking": true,
+        "is_fast_fork_capable": false
+      },
+      {
+        "url": "https://api-xdc-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
+        "supportsIpv6": false,
+        "is_archive": false,
+        "supports_forking": false,
         "is_fast_fork_capable": false
       },
       {
@@ -585,6 +613,41 @@
         "is_archive": false,
         "supports_forking": false,
         "is_fast_fork_capable": false
+      },
+      {
+        "url": "https://bsc.api.pocket.network",
+        "supportsIpv6": false,
+        "is_archive": false,
+        "supports_forking": false,
+        "is_fast_fork_capable": false
+      },
+      {
+        "url": "https://public-bsc-mainnet.fastnode.io",
+        "supportsIpv6": true,
+        "is_archive": true,
+        "supports_forking": false,
+        "is_fast_fork_capable": false
+      },
+      {
+        "url": "https://bsc.rpc.sentio.xyz",
+        "supportsIpv6": true,
+        "is_archive": true,
+        "supports_forking": true,
+        "is_fast_fork_capable": false
+      },
+      {
+        "url": "https://rpc-bsc.blockmachine.io",
+        "supportsIpv6": true,
+        "is_archive": true,
+        "supports_forking": true,
+        "is_fast_fork_capable": false
+      },
+      {
+        "url": "https://56.rpc.thirdweb.com",
+        "supportsIpv6": true,
+        "is_archive": true,
+        "supports_forking": true,
+        "is_fast_fork_capable": false
       }
     ]
   },
@@ -592,13 +655,6 @@
     "name": "Meter Mainnet",
     "chainId": 82,
     "rpcs": [
-      {
-        "url": "https://lb.routeme.sh/rpc/evm/82",
-        "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": false,
-        "is_fast_fork_capable": false
-      },
       {
         "url": "https://rpc.meter.io",
         "supportsIpv6": true,
@@ -619,13 +675,6 @@
     "name": "Gnosis",
     "chainId": 100,
     "rpcs": [
-      {
-        "url": "https://lb.routeme.sh/rpc/evm/100",
-        "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": true,
-        "is_fast_fork_capable": false
-      },
       {
         "url": "https://rpc.gnosischain.com",
         "supportsIpv6": false,
@@ -663,6 +712,13 @@
       },
       {
         "url": "https://public.1rpc.io/gnosis",
+        "supportsIpv6": true,
+        "is_archive": true,
+        "supports_forking": true,
+        "is_fast_fork_capable": false
+      },
+      {
+        "url": "https://gno-mainnet.gateway.tatum.io",
         "supportsIpv6": true,
         "is_archive": true,
         "supports_forking": true,
@@ -751,17 +807,17 @@
     "chainId": 130,
     "rpcs": [
       {
-        "url": "https://lb.routeme.sh/rpc/evm/130",
-        "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": false,
-        "is_fast_fork_capable": false
-      },
-      {
         "url": "https://mainnet.unichain.org",
         "supportsIpv6": true,
         "is_archive": true,
         "supports_forking": true,
+        "is_fast_fork_capable": false
+      },
+      {
+        "url": "https://unichain.api.onfinality.io/public",
+        "supportsIpv6": false,
+        "is_archive": false,
+        "supports_forking": false,
         "is_fast_fork_capable": false
       },
       {
@@ -876,16 +932,9 @@
         "is_fast_fork_capable": false
       },
       {
-        "url": "https://api-polygon-mainnet-full.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-        "supportsIpv6": false,
-        "is_archive": false,
-        "supports_forking": false,
-        "is_fast_fork_capable": false
-      },
-      {
         "url": "https://rpc.swiftnodes.io/rpc/polygon",
         "supportsIpv6": false,
-        "is_archive": false,
+        "is_archive": true,
         "supports_forking": true,
         "is_fast_fork_capable": false
       },
@@ -923,20 +972,6 @@
     "name": "Monad",
     "chainId": 143,
     "rpcs": [
-      {
-        "url": "https://lb.routeme.sh/rpc/evm/143",
-        "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": true,
-        "is_fast_fork_capable": false
-      },
-      {
-        "url": "https://monad-mainnet.drpc.org",
-        "supportsIpv6": true,
-        "is_archive": true,
-        "supports_forking": true,
-        "is_fast_fork_capable": false
-      },
       {
         "url": "https://monad-mainnet-rpc.spidernode.net",
         "supportsIpv6": true,
@@ -1081,7 +1116,7 @@
         "supportsIpv6": false,
         "is_archive": false,
         "supports_forking": true,
-        "is_fast_fork_capable": false
+        "is_fast_fork_capable": true
       },
       {
         "url": "https://sonic-mainnet.gateway.tatum.io",
@@ -1110,13 +1145,6 @@
     "name": "Manta Pacific Mainnet",
     "chainId": 169,
     "rpcs": [
-      {
-        "url": "https://lb.routeme.sh/rpc/evm/169",
-        "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": true,
-        "is_fast_fork_capable": true
-      },
       {
         "url": "https://pacific-rpc.manta.network/http",
         "supportsIpv6": true,
@@ -1180,6 +1208,20 @@
     "chainId": 196,
     "rpcs": [
       {
+        "url": "https://lb.routeme.sh/rpc/evm/196",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": true,
+        "is_fast_fork_capable": false
+      },
+      {
+        "url": "https://rpc.nodeflare.app/xlayer/public",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": false,
+        "is_fast_fork_capable": false
+      },
+      {
         "url": "https://rpc.xlayer.tech",
         "supportsIpv6": true,
         "is_archive": true,
@@ -1220,6 +1262,13 @@
     "name": "opBNB Mainnet",
     "chainId": 204,
     "rpcs": [
+      {
+        "url": "https://lb.routeme.sh/rpc/evm/204",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": true,
+        "is_fast_fork_capable": false
+      },
       {
         "url": "https://opbnb-mainnet-rpc.bnbchain.org",
         "supportsIpv6": false,
@@ -1290,6 +1339,13 @@
     "chainId": 223,
     "rpcs": [
       {
+        "url": "https://lb.routeme.sh/rpc/evm/223",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": true,
+        "is_fast_fork_capable": false
+      },
+      {
         "url": "https://rpc.bsquared.network",
         "supportsIpv6": false,
         "is_archive": true,
@@ -1358,13 +1414,6 @@
     "chainId": 250,
     "rpcs": [
       {
-        "url": "https://lb.routeme.sh/rpc/evm/250",
-        "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": true,
-        "is_fast_fork_capable": false
-      },
-      {
         "url": "https://rpcapi.fantom.network",
         "supportsIpv6": false,
         "is_archive": true,
@@ -1395,8 +1444,8 @@
       {
         "url": "https://public.1rpc.io/ftm",
         "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": true,
+        "is_archive": true,
+        "supports_forking": false,
         "is_fast_fork_capable": false
       },
       {
@@ -1541,7 +1590,7 @@
         "url": "https://zksync-era.api.pocket.network",
         "supportsIpv6": false,
         "is_archive": true,
-        "supports_forking": true,
+        "supports_forking": false,
         "is_fast_fork_capable": false
       },
       {
@@ -1564,6 +1613,13 @@
     "name": "PulseChain",
     "chainId": 369,
     "rpcs": [
+      {
+        "url": "https://lb.routeme.sh/rpc/evm/369",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": false,
+        "is_fast_fork_capable": false
+      },
       {
         "url": "https://rpc.pulsechain.com",
         "supportsIpv6": false,
@@ -1628,6 +1684,13 @@
         "is_fast_fork_capable": false
       },
       {
+        "url": "https://sophia-rpc.mijk.pro",
+        "supportsIpv6": false,
+        "is_archive": false,
+        "supports_forking": false,
+        "is_fast_fork_capable": false
+      },
+      {
         "url": "https://rpc.pulseheartbeat.com",
         "supportsIpv6": true,
         "is_archive": false,
@@ -1685,7 +1748,7 @@
       {
         "url": "https://worldchain.drpc.org",
         "supportsIpv6": true,
-        "is_archive": false,
+        "is_archive": true,
         "supports_forking": true,
         "is_fast_fork_capable": false
       }
@@ -1743,6 +1806,13 @@
         "is_fast_fork_capable": false
       },
       {
+        "url": "https://rpc.hyperlend.finance",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": true,
+        "is_fast_fork_capable": false
+      },
+      {
         "url": "https://hyperliquid.rpc.blxrbdn.com",
         "supportsIpv6": false,
         "is_archive": true,
@@ -1766,7 +1836,7 @@
         "url": "https://lb.routeme.sh/rpc/evm/1088",
         "supportsIpv6": true,
         "is_archive": false,
-        "supports_forking": true,
+        "supports_forking": false,
         "is_fast_fork_capable": false
       },
       {
@@ -1834,7 +1904,7 @@
       {
         "url": "https://lb.routeme.sh/rpc/evm/1116",
         "supportsIpv6": true,
-        "is_archive": true,
+        "is_archive": false,
         "supports_forking": false,
         "is_fast_fork_capable": false
       },
@@ -1855,9 +1925,9 @@
       {
         "url": "https://core.drpc.org",
         "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": false,
-        "is_fast_fork_capable": false
+        "is_archive": true,
+        "supports_forking": true,
+        "is_fast_fork_capable": true
       },
       {
         "url": "https://api.zan.top/core-mainnet",
@@ -1869,9 +1939,9 @@
       {
         "url": "https://1116.rpc.thirdweb.com",
         "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": false,
-        "is_fast_fork_capable": false
+        "is_archive": true,
+        "supports_forking": true,
+        "is_fast_fork_capable": true
       }
     ]
   },
@@ -1879,6 +1949,13 @@
     "name": "Lisk",
     "chainId": 1135,
     "rpcs": [
+      {
+        "url": "https://lb.routeme.sh/rpc/evm/1135",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": true,
+        "is_fast_fork_capable": false
+      },
       {
         "url": "https://rpc.api.lisk.com",
         "supportsIpv6": false,
@@ -1901,6 +1978,13 @@
         "is_fast_fork_capable": false
       },
       {
+        "url": "https://lisk-mainnet.gateway.tatum.io",
+        "supportsIpv6": true,
+        "is_archive": true,
+        "supports_forking": true,
+        "is_fast_fork_capable": true
+      },
+      {
         "url": "https://1135.rpc.thirdweb.com",
         "supportsIpv6": true,
         "is_archive": true,
@@ -1917,7 +2001,7 @@
         "url": "https://lb.routeme.sh/rpc/evm/1284",
         "supportsIpv6": true,
         "is_archive": false,
-        "supports_forking": true,
+        "supports_forking": false,
         "is_fast_fork_capable": false
       },
       {
@@ -1986,7 +2070,7 @@
         "url": "https://sei-evm-rpc.stakeme.pro",
         "supportsIpv6": true,
         "is_archive": true,
-        "supports_forking": true,
+        "supports_forking": false,
         "is_fast_fork_capable": false
       },
       {
@@ -2016,6 +2100,13 @@
     "name": "Soneium",
     "chainId": 1868,
     "rpcs": [
+      {
+        "url": "https://lb.routeme.sh/rpc/evm/1868",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": false,
+        "is_fast_fork_capable": false
+      },
       {
         "url": "https://rpc.nodeflare.app/soneium/public",
         "supportsIpv6": true,
@@ -2048,7 +2139,7 @@
         "url": "https://rpc.swiftnodes.io/rpc/soneium",
         "supportsIpv6": false,
         "is_archive": false,
-        "supports_forking": true,
+        "supports_forking": false,
         "is_fast_fork_capable": false
       },
       {
@@ -2064,13 +2155,6 @@
     "name": "Ronin",
     "chainId": 2020,
     "rpcs": [
-      {
-        "url": "https://lb.routeme.sh/rpc/evm/2020",
-        "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": true,
-        "is_fast_fork_capable": false
-      },
       {
         "url": "https://ronin.drpc.org",
         "supportsIpv6": true,
@@ -2106,6 +2190,13 @@
     "chainId": 2345,
     "rpcs": [
       {
+        "url": "https://lb.routeme.sh/rpc/evm/2345",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": true,
+        "is_fast_fork_capable": false
+      },
+      {
         "url": "https://rpc.goat.network",
         "supportsIpv6": false,
         "is_archive": false,
@@ -2136,7 +2227,7 @@
         "url": "https://lb.routeme.sh/rpc/evm/2741",
         "supportsIpv6": true,
         "is_archive": false,
-        "supports_forking": true,
+        "supports_forking": false,
         "is_fast_fork_capable": false
       },
       {
@@ -2166,13 +2257,6 @@
     "name": "Morph",
     "chainId": 2818,
     "rpcs": [
-      {
-        "url": "https://lb.routeme.sh/rpc/evm/2818",
-        "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": true,
-        "is_fast_fork_capable": false
-      },
       {
         "url": "https://rpc.morphl2.io",
         "supportsIpv6": true,
@@ -2218,13 +2302,6 @@
     "chainId": 4689,
     "rpcs": [
       {
-        "url": "https://lb.routeme.sh/rpc/evm/4689",
-        "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": true,
-        "is_fast_fork_capable": false
-      },
-      {
         "url": "https://babel-api.mainnet.iotex.io",
         "supportsIpv6": true,
         "is_archive": false,
@@ -2266,6 +2343,13 @@
     "chainId": 5000,
     "rpcs": [
       {
+        "url": "https://lb.routeme.sh/rpc/evm/5000",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": false,
+        "is_fast_fork_capable": false
+      },
+      {
         "url": "https://rpc.mantle.xyz",
         "supportsIpv6": false,
         "is_archive": true,
@@ -2287,6 +2371,13 @@
         "is_fast_fork_capable": true
       },
       {
+        "url": "https://mantle.api.onfinality.io/public",
+        "supportsIpv6": false,
+        "is_archive": false,
+        "supports_forking": false,
+        "is_fast_fork_capable": false
+      },
+      {
         "url": "https://api.zan.top/mantle-mainnet",
         "supportsIpv6": false,
         "is_archive": true,
@@ -2303,9 +2394,9 @@
       {
         "url": "https://rpc.swiftnodes.io/rpc/mantle",
         "supportsIpv6": false,
-        "is_archive": false,
+        "is_archive": true,
         "supports_forking": true,
-        "is_fast_fork_capable": false
+        "is_fast_fork_capable": true
       },
       {
         "url": "https://rpc-mantle.blockmachine.io",
@@ -2376,13 +2467,6 @@
         "is_fast_fork_capable": false
       },
       {
-        "url": "https://alpha-hardworking-orb.kaia-mainnet.quiknode.pro",
-        "supportsIpv6": false,
-        "is_archive": true,
-        "supports_forking": true,
-        "is_fast_fork_capable": false
-      },
-      {
         "url": "https://kaia.api.pocket.network",
         "supportsIpv6": false,
         "is_archive": false,
@@ -2399,8 +2483,8 @@
       {
         "url": "https://klaytn.drpc.org",
         "supportsIpv6": true,
-        "is_archive": true,
-        "supports_forking": true,
+        "is_archive": false,
+        "supports_forking": false,
         "is_fast_fork_capable": false
       },
       {
@@ -2454,8 +2538,8 @@
       {
         "url": "https://public.1rpc.io/base",
         "supportsIpv6": true,
-        "is_archive": true,
-        "supports_forking": false,
+        "is_archive": false,
+        "supports_forking": true,
         "is_fast_fork_capable": false
       },
       {
@@ -2508,13 +2592,6 @@
         "is_fast_fork_capable": false
       },
       {
-        "url": "https://base.api.onfinality.io/public",
-        "supportsIpv6": false,
-        "is_archive": false,
-        "supports_forking": false,
-        "is_fast_fork_capable": false
-      },
-      {
         "url": "https://base-mainnet.gateway.tatum.io",
         "supportsIpv6": false,
         "is_archive": true,
@@ -2532,7 +2609,7 @@
         "url": "https://base.api.pocket.network",
         "supportsIpv6": false,
         "is_archive": true,
-        "supports_forking": false,
+        "supports_forking": true,
         "is_fast_fork_capable": false
       },
       {
@@ -2576,13 +2653,6 @@
     "name": "Plasma Mainnet",
     "chainId": 9745,
     "rpcs": [
-      {
-        "url": "https://lb.routeme.sh/rpc/evm/9745",
-        "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": false,
-        "is_fast_fork_capable": false
-      },
       {
         "url": "https://rpc.swiftnodes.io/rpc/plasma",
         "supportsIpv6": false,
@@ -2666,7 +2736,7 @@
       {
         "url": "https://public.1rpc.io/arb",
         "supportsIpv6": true,
-        "is_archive": false,
+        "is_archive": true,
         "supports_forking": false,
         "is_fast_fork_capable": false
       },
@@ -2675,6 +2745,13 @@
         "supportsIpv6": true,
         "is_archive": true,
         "supports_forking": true,
+        "is_fast_fork_capable": false
+      },
+      {
+        "url": "https://arb-mainnet.g.alchemy.com/v2/demo",
+        "supportsIpv6": false,
+        "is_archive": false,
+        "supports_forking": false,
         "is_fast_fork_capable": false
       },
       {
@@ -2701,7 +2778,7 @@
       {
         "url": "https://api.zan.top/arb-one",
         "supportsIpv6": false,
-        "is_archive": false,
+        "is_archive": true,
         "supports_forking": true,
         "is_fast_fork_capable": true
       },
@@ -2709,7 +2786,7 @@
         "url": "https://arbitrum.drpc.org",
         "supportsIpv6": true,
         "is_archive": true,
-        "supports_forking": false,
+        "supports_forking": true,
         "is_fast_fork_capable": true
       },
       {
@@ -2720,11 +2797,25 @@
         "is_fast_fork_capable": false
       },
       {
+        "url": "https://arbitrum.api.onfinality.io/public",
+        "supportsIpv6": false,
+        "is_archive": false,
+        "supports_forking": false,
+        "is_fast_fork_capable": false
+      },
+      {
+        "url": "https://arb-one-mainnet.gateway.tatum.io",
+        "supportsIpv6": true,
+        "is_archive": true,
+        "supports_forking": true,
+        "is_fast_fork_capable": true
+      },
+      {
         "url": "https://arb-one.api.pocket.network",
         "supportsIpv6": false,
         "is_archive": true,
-        "supports_forking": false,
-        "is_fast_fork_capable": true
+        "supports_forking": true,
+        "is_fast_fork_capable": false
       },
       {
         "url": "https://public-arb-mainnet.fastnode.io",
@@ -2744,7 +2835,7 @@
         "url": "https://rpc.swiftnodes.io/rpc/arbitrum",
         "supportsIpv6": false,
         "is_archive": false,
-        "supports_forking": true,
+        "supports_forking": false,
         "is_fast_fork_capable": false
       },
       {
@@ -2768,18 +2859,11 @@
     "chainId": 42220,
     "rpcs": [
       {
-        "url": "https://lb.routeme.sh/rpc/evm/42220",
-        "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": false,
-        "is_fast_fork_capable": false
-      },
-      {
         "url": "https://forno.celo.org",
         "supportsIpv6": true,
         "is_archive": true,
         "supports_forking": true,
-        "is_fast_fork_capable": true
+        "is_fast_fork_capable": false
       },
       {
         "url": "https://rpc.celocolombia.org",
@@ -2805,7 +2889,7 @@
       {
         "url": "https://celo-json-rpc.stakely.io",
         "supportsIpv6": true,
-        "is_archive": true,
+        "is_archive": false,
         "supports_forking": false,
         "is_fast_fork_capable": false
       },
@@ -2814,7 +2898,7 @@
         "supportsIpv6": false,
         "is_archive": false,
         "supports_forking": true,
-        "is_fast_fork_capable": true
+        "is_fast_fork_capable": false
       },
       {
         "url": "https://42220.rpc.thirdweb.com",
@@ -2829,6 +2913,13 @@
     "name": "Etherlink Mainnet",
     "chainId": 42793,
     "rpcs": [
+      {
+        "url": "https://lb.routeme.sh/rpc/evm/42793",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": false,
+        "is_fast_fork_capable": false
+      },
       {
         "url": "https://node.mainnet.etherlink.com",
         "supportsIpv6": true,
@@ -2857,13 +2948,6 @@
     "chainId": 43111,
     "rpcs": [
       {
-        "url": "https://lb.routeme.sh/rpc/evm/43111",
-        "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": true,
-        "is_fast_fork_capable": false
-      },
-      {
         "url": "https://rpc.hemi.network/rpc",
         "supportsIpv6": true,
         "is_archive": true,
@@ -2891,10 +2975,17 @@
     "chainId": 43114,
     "rpcs": [
       {
+        "url": "https://lb.routeme.sh/rpc/evm/43114",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": true,
+        "is_fast_fork_capable": false
+      },
+      {
         "url": "https://api.avax.network/ext/bc/C/rpc",
         "supportsIpv6": true,
         "is_archive": true,
-        "supports_forking": false,
+        "supports_forking": true,
         "is_fast_fork_capable": false
       },
       {
@@ -3036,6 +3127,13 @@
     "chainId": 59144,
     "rpcs": [
       {
+        "url": "https://lb.routeme.sh/rpc/evm/59144",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": true,
+        "is_fast_fork_capable": false
+      },
+      {
         "url": "https://rpc.linea.build",
         "supportsIpv6": true,
         "is_archive": true,
@@ -3064,13 +3162,6 @@
         "is_fast_fork_capable": false
       },
       {
-        "url": "https://api-linea-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-        "supportsIpv6": false,
-        "is_archive": false,
-        "supports_forking": false,
-        "is_fast_fork_capable": false
-      },
-      {
         "url": "https://linea-rpc.publicnode.com",
         "supportsIpv6": true,
         "is_archive": false,
@@ -3088,7 +3179,7 @@
         "url": "https://rpc.swiftnodes.io/rpc/linea",
         "supportsIpv6": false,
         "is_archive": false,
-        "supports_forking": false,
+        "supports_forking": true,
         "is_fast_fork_capable": false
       },
       {
@@ -3104,6 +3195,13 @@
     "name": "BOB",
     "chainId": 60808,
     "rpcs": [
+      {
+        "url": "https://rpc.nodeflare.app/bob/public",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": false,
+        "is_fast_fork_capable": false
+      },
       {
         "url": "https://rpc.gobob.xyz",
         "supportsIpv6": true,
@@ -3198,7 +3296,7 @@
         "url": "https://rpc.swiftnodes.io/rpc/berachain",
         "supportsIpv6": false,
         "is_archive": false,
-        "supports_forking": false,
+        "supports_forking": true,
         "is_fast_fork_capable": false
       },
       {
@@ -3214,6 +3312,13 @@
     "name": "Blast",
     "chainId": 81457,
     "rpcs": [
+      {
+        "url": "https://lb.routeme.sh/rpc/evm/81457",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": false,
+        "is_fast_fork_capable": false
+      },
       {
         "url": "https://rpc.blast.io",
         "supportsIpv6": false,
@@ -3259,8 +3364,8 @@
       {
         "url": "https://rpc.swiftnodes.io/rpc/blast",
         "supportsIpv6": false,
-        "is_archive": false,
-        "supports_forking": false,
+        "is_archive": true,
+        "supports_forking": true,
         "is_fast_fork_capable": false
       },
       {
@@ -3304,13 +3409,6 @@
     "chainId": 167000,
     "rpcs": [
       {
-        "url": "https://lb.routeme.sh/rpc/evm/167000",
-        "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": false,
-        "is_fast_fork_capable": false
-      },
-      {
         "url": "https://rpc.taiko.xyz",
         "supportsIpv6": false,
         "is_archive": true,
@@ -3319,13 +3417,6 @@
       },
       {
         "url": "https://rpc.ankr.com/taiko",
-        "supportsIpv6": true,
-        "is_archive": true,
-        "supports_forking": true,
-        "is_fast_fork_capable": false
-      },
-      {
-        "url": "https://taiko.drpc.org",
         "supportsIpv6": true,
         "is_archive": true,
         "supports_forking": true,
@@ -3342,13 +3433,6 @@
         "url": "https://taiko.api.pocket.network",
         "supportsIpv6": false,
         "is_archive": true,
-        "supports_forking": true,
-        "is_fast_fork_capable": true
-      },
-      {
-        "url": "https://rpc.swiftnodes.io/rpc/taiko",
-        "supportsIpv6": false,
-        "is_archive": false,
         "supports_forking": true,
         "is_fast_fork_capable": false
       },
@@ -3368,13 +3452,6 @@
       },
       {
         "url": "https://taiko-rpc.publicnode.com",
-        "supportsIpv6": true,
-        "is_archive": true,
-        "supports_forking": true,
-        "is_fast_fork_capable": true
-      },
-      {
-        "url": "https://167000.rpc.thirdweb.com",
         "supportsIpv6": true,
         "is_archive": true,
         "supports_forking": true,
@@ -3399,13 +3476,6 @@
         "is_archive": false,
         "supports_forking": false,
         "is_fast_fork_capable": false
-      },
-      {
-        "url": "https://rpc-bitlayer.rockx.com",
-        "supportsIpv6": true,
-        "is_archive": true,
-        "supports_forking": true,
-        "is_fast_fork_capable": true
       }
     ]
   },
@@ -3451,7 +3521,7 @@
       {
         "url": "https://rpc.swiftnodes.io/rpc/scroll",
         "supportsIpv6": false,
-        "is_archive": false,
+        "is_archive": true,
         "supports_forking": true,
         "is_fast_fork_capable": true
       },
@@ -3489,6 +3559,13 @@
     "name": "katana",
     "chainId": 747474,
     "rpcs": [
+      {
+        "url": "https://lb.routeme.sh/rpc/evm/747474",
+        "supportsIpv6": true,
+        "is_archive": false,
+        "supports_forking": true,
+        "is_fast_fork_capable": false
+      },
       {
         "url": "https://katana.drpc.org",
         "supportsIpv6": true,
@@ -3602,13 +3679,6 @@
     "chainId": 1666600000,
     "rpcs": [
       {
-        "url": "https://lb.routeme.sh/rpc/evm/1666600000",
-        "supportsIpv6": true,
-        "is_archive": false,
-        "supports_forking": false,
-        "is_fast_fork_capable": false
-      },
-      {
         "url": "https://api.harmony.one",
         "supportsIpv6": false,
         "is_archive": true,
@@ -3638,13 +3708,6 @@
       },
       {
         "url": "https://harmony-0.drpc.org",
-        "supportsIpv6": true,
-        "is_archive": true,
-        "supports_forking": true,
-        "is_fast_fork_capable": true
-      },
-      {
-        "url": "https://one-mainnet-s0.gateway.tatum.io",
         "supportsIpv6": true,
         "is_archive": true,
         "supports_forking": true,
