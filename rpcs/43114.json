@@ -3,6 +3,13 @@
   "chainId": 43114,
   "rpcs": [
     {
+      "url": "https://rpc.nodeflare.app/avax/public",
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
+    },
+    {
       "url": "https://api.avax.network/ext/bc/C/rpc",
       "supportsIpv6": true,
       "is_archive": true,
@@ -10,11 +17,11 @@
       "is_fast_fork_capable": false
     },
     {
-      "url": "https://avalanche-c-chain-rpc.publicnode.com",
+      "url": "https://public.1rpc.io/avax/c",
       "supportsIpv6": true,
-      "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": true
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
     },
     {
       "url": "https://avalanche.api.onfinality.io/public/ext/bc/C/rpc",
@@ -22,13 +29,6 @@
       "is_archive": false,
       "supports_forking": true,
       "is_fast_fork_capable": false
-    },
-    {
-      "url": "https://avalanche.drpc.org",
-      "supportsIpv6": true,
-      "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": true
     },
     {
       "url": "https://avalanche-mainnet.gateway.tenderly.co",
@@ -39,51 +39,9 @@
     },
     {
       "url": "https://spectrum-01.simplystaking.xyz/avalanche-mn-rpc/ext/bc/C/rpc",
-      "supportsIpv6": true,
+      "supportsIpv6": false,
       "is_archive": false,
       "supports_forking": false,
-      "is_fast_fork_capable": false
-    },
-    {
-      "url": "https://avax.api.pocket.network",
-      "supportsIpv6": false,
-      "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": true
-    },
-    {
-      "url": "https://avalanche.rpc.sentio.xyz",
-      "supportsIpv6": true,
-      "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": true
-    },
-    {
-      "url": "https://rpc.swiftnodes.io/rpc/avalanche",
-      "supportsIpv6": false,
-      "is_archive": false,
-      "supports_forking": true,
-      "is_fast_fork_capable": false
-    },
-    {
-      "url": "https://rpc-avalanche.blockmachine.io",
-      "supportsIpv6": true,
-      "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": true
-    },
-    {
-      "url": "https://xrpc.cl/avalanche",
-      "supportsIpv6": true,
-      "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": false
-    },
-    {
-      "url": "https://43114.rpc.thirdweb.com",
-      "supportsIpv6": true,
-      "is_archive": true,
-      "supports_forking": true,
       "is_fast_fork_capable": false
     }
   ]
