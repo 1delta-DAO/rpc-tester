@@ -92,12 +92,25 @@ async function batchCall<T>(tasks: (() => Promise<T>)[], concurrency: number): P
   return Promise.all(results)
 }
 
+function isPublicRpcUrl(value: string): boolean {
+  try {
+    const url = new URL(value)
+    // These lists are published; do not copy API-keyed URLs from upstream Chainlist.
+    return (url.protocol === 'https:' || url.protocol === 'http:')
+      && !url.username && !url.password && !url.hash
+      && [...url.searchParams].every(([key, value]) => key === 'owner' && value.length <= 16)
+      && !url.pathname.split('/').some((part) => /^[a-zA-Z0-9_-]{24,}$/.test(part))
+  } catch {
+    return false
+  }
+}
+
 function getRpcs(chain: ChainlistChain): string[] {
   const rpc = chain.rpc || []
   const urls: string[] = []
   for (const entry of rpc) {
     const url = typeof entry === "string" ? entry : entry?.url
-    if (url) urls.push(url)
+    if (url && isPublicRpcUrl(url)) urls.push(url)
   }
   return urls
 }
@@ -273,7 +286,7 @@ async function main(): Promise<void> {
       const raw = JSON.parse(fs.readFileSync(filePath, "utf8")) as Payload
       const existing: Payload = {
         ...raw,
-        rpcs: raw.rpcs.map((r) => ({
+        rpcs: raw.rpcs.filter((r) => isPublicRpcUrl(r.url)).map((r) => ({
           ...r,
           is_archive: (r as RpcResult).is_archive ?? false,
           supports_forking: (r as RpcResult).supports_forking ?? false,
@@ -281,6 +294,9 @@ async function main(): Promise<void> {
         })),
       }
       merged[String(chainId)] = existing
+      if (existing.rpcs.length !== raw.rpcs.length) {
+        fs.writeFileSync(filePath, JSON.stringify(existing, null, 2))
+      }
       console.log("")
       console.log(`[${chainIndex}/${totalChains}] ${name} (chainId ${chainId}) — skipped (file exists: ${chainId}.json)`)
       skipped++
