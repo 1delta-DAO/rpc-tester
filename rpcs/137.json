@@ -3,6 +3,20 @@
   "chainId": 137,
   "rpcs": [
     {
+      "url": "https://rpc.hostdefi.com/api/rpc/polygon",
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": true,
+      "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://rpc.nodeflare.app/polygon/public",
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
+    },
+    {
       "url": "https://rpc-mainnet.matic.quiknode.pro",
       "supportsIpv6": false,
       "is_archive": true,
@@ -12,8 +26,8 @@
     {
       "url": "https://public.1rpc.io/matic",
       "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": false,
+      "is_archive": true,
+      "supports_forking": true,
       "is_fast_fork_capable": false
     },
     {
@@ -47,15 +61,15 @@
     {
       "url": "https://api.zan.top/polygon-mainnet",
       "supportsIpv6": false,
-      "is_archive": true,
-      "supports_forking": false,
+      "is_archive": false,
+      "supports_forking": true,
       "is_fast_fork_capable": false
     },
     {
       "url": "https://poly.api.pocket.network",
       "supportsIpv6": false,
       "is_archive": true,
-      "supports_forking": false,
+      "supports_forking": true,
       "is_fast_fork_capable": false
     },
     {
@@ -81,6 +95,13 @@
     },
     {
       "url": "https://rpc-polygon.blockmachine.io",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://xrpc.cl/polygon",
       "supportsIpv6": true,
       "is_archive": true,
       "supports_forking": true,
