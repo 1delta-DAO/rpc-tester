@@ -5,9 +5,16 @@
     {
       "url": "https://xrpc.cl/eth",
       "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": false,
+      "is_archive": true,
+      "supports_forking": true,
       "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://rpc.hostdefi.com/api/rpc/ethereum",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
     },
     {
       "url": "https://one.valve.city/rpc/vk_demo/evm/1",
@@ -103,16 +110,9 @@
     {
       "url": "https://eth.meowrpc.com",
       "supportsIpv6": false,
-      "is_archive": true,
+      "is_archive": false,
       "supports_forking": false,
       "is_fast_fork_capable": false
-    },
-    {
-      "url": "https://eth.drpc.org",
-      "supportsIpv6": true,
-      "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": true
     },
     {
       "url": "https://mainnet.gateway.tenderly.co",
@@ -132,7 +132,7 @@
       "url": "https://api.zan.top/eth-mainnet",
       "supportsIpv6": false,
       "is_archive": true,
-      "supports_forking": true,
+      "supports_forking": false,
       "is_fast_fork_capable": true
     },
     {
@@ -189,6 +189,13 @@
       "supportsIpv6": true,
       "is_archive": false,
       "supports_forking": false,
+      "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://mainnet.rpc.sentio.xyz",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
       "is_fast_fork_capable": false
     },
     {
