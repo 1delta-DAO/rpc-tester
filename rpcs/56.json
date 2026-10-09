@@ -3,6 +3,13 @@
   "chainId": 56,
   "rpcs": [
     {
+      "url": "https://xrpc.cl/bsc",
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
+    },
+    {
       "url": "https://rpc.hostdefi.com/api/rpc/bsc",
       "supportsIpv6": true,
       "is_archive": false,
@@ -166,15 +173,15 @@
     {
       "url": "https://api.zan.top/bsc-mainnet",
       "supportsIpv6": false,
-      "is_archive": false,
+      "is_archive": true,
       "supports_forking": true,
       "is_fast_fork_capable": false
     },
     {
-      "url": "https://bsc.drpc.org",
-      "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": false,
+      "url": "https://bsc-mainnet.gateway.tatum.io",
+      "supportsIpv6": false,
+      "is_archive": true,
+      "supports_forking": true,
       "is_fast_fork_capable": false
     },
     {
@@ -208,21 +215,14 @@
     {
       "url": "https://bsc.api.pocket.network",
       "supportsIpv6": false,
-      "is_archive": true,
-      "supports_forking": true,
+      "is_archive": false,
+      "supports_forking": false,
       "is_fast_fork_capable": false
     },
     {
       "url": "https://bsc.rpc.sentio.xyz",
       "supportsIpv6": true,
       "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": false
-    },
-    {
-      "url": "https://rpc.swiftnodes.io/rpc/bsc",
-      "supportsIpv6": false,
-      "is_archive": false,
       "supports_forking": true,
       "is_fast_fork_capable": false
     },
