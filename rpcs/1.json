@@ -3,11 +3,18 @@
   "chainId": 1,
   "rpcs": [
     {
-      "url": "https://rpc.hostdefi.com/api/rpc/ethereum",
+      "url": "https://xrpc.cl/eth",
       "supportsIpv6": true,
       "is_archive": false,
       "supports_forking": false,
       "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://rpc.hostdefi.com/api/rpc/ethereum",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
     },
     {
       "url": "https://one.valve.city/rpc/vk_demo/evm/1",
@@ -232,6 +239,13 @@
       "is_archive": false,
       "supports_forking": false,
       "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://1.rpc.thirdweb.com",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
     }
   ]
 }
