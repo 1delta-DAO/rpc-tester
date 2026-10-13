@@ -3,13 +3,6 @@
   "chainId": 1,
   "rpcs": [
     {
-      "url": "https://rpc.hostdefi.com/api/rpc/ethereum",
-      "supportsIpv6": true,
-      "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": true
-    },
-    {
       "url": "https://one.valve.city/rpc/vk_demo/evm/1",
       "supportsIpv6": true,
       "is_archive": true,
@@ -24,11 +17,25 @@
       "is_fast_fork_capable": false
     },
     {
+      "url": "https://ethereum-rpc.publicnode.com",
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
+    },
+    {
       "url": "https://rpc.mevblocker.io",
       "supportsIpv6": true,
       "is_archive": true,
       "supports_forking": true,
       "is_fast_fork_capable": true
+    },
+    {
+      "url": "https://rpc.flashbots.net",
+      "supportsIpv6": false,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
     },
     {
       "url": "https://virginia.rpc.blxrbdn.com",
@@ -105,7 +112,7 @@
       "supportsIpv6": false,
       "is_archive": true,
       "supports_forking": true,
-      "is_fast_fork_capable": true
+      "is_fast_fork_capable": false
     },
     {
       "url": "https://ethereum-mainnet.gateway.tatum.io",
@@ -143,13 +150,6 @@
       "is_fast_fork_capable": false
     },
     {
-      "url": "https://eth.api.onfinality.io/public",
-      "supportsIpv6": false,
-      "is_archive": false,
-      "supports_forking": false,
-      "is_fast_fork_capable": false
-    },
-    {
       "url": "https://eth.api.pocket.network",
       "supportsIpv6": false,
       "is_archive": true,
@@ -161,6 +161,13 @@
       "supportsIpv6": true,
       "is_archive": false,
       "supports_forking": false,
+      "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://rpc-eth.blockmachine.io",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
       "is_fast_fork_capable": false
     },
     {
@@ -176,6 +183,27 @@
       "is_archive": true,
       "supports_forking": true,
       "is_fast_fork_capable": true
+    },
+    {
+      "url": "https://rpc.mevblocker.io/noreverts",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
+    },
+    {
+      "url": "https://rpc.mevblocker.io/fullprivacy",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
+    },
+    {
+      "url": "https://ethereum-rpc.blockreq.com/v1/rpc/public",
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
     }
   ]
 }
