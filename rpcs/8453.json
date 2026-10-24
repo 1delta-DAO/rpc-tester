@@ -3,10 +3,10 @@
   "chainId": 8453,
   "rpcs": [
     {
-      "url": "https://xrpc.cl/base",
+      "url": "https://lb.routeme.sh/rpc/evm/8453",
       "supportsIpv6": true,
-      "is_archive": true,
-      "supports_forking": true,
+      "is_archive": false,
+      "supports_forking": false,
       "is_fast_fork_capable": false
     },
     {
@@ -24,6 +24,13 @@
       "is_fast_fork_capable": false
     },
     {
+      "url": "https://public.1rpc.io/base",
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": true,
+      "is_fast_fork_capable": false
+    },
+    {
       "url": "https://base-public.nodies.app",
       "supportsIpv6": true,
       "is_archive": true,
@@ -34,7 +41,7 @@
       "url": "https://base.meowrpc.com",
       "supportsIpv6": false,
       "is_archive": false,
-      "supports_forking": true,
+      "supports_forking": false,
       "is_fast_fork_capable": false
     },
     {
@@ -70,13 +77,20 @@
       "supportsIpv6": true,
       "is_archive": true,
       "supports_forking": true,
+      "is_fast_fork_capable": true
+    },
+    {
+      "url": "https://base-mainnet.gateway.tatum.io",
+      "supportsIpv6": false,
+      "is_archive": true,
+      "supports_forking": true,
       "is_fast_fork_capable": false
     },
     {
       "url": "https://api.zan.top/base-mainnet",
       "supportsIpv6": false,
       "is_archive": true,
-      "supports_forking": false,
+      "supports_forking": true,
       "is_fast_fork_capable": false
     },
     {
@@ -104,13 +118,6 @@
       "url": "https://base.rpc.sentio.xyz",
       "supportsIpv6": true,
       "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": false
-    },
-    {
-      "url": "https://rpc.swiftnodes.io/rpc/base",
-      "supportsIpv6": false,
-      "is_archive": false,
       "supports_forking": true,
       "is_fast_fork_capable": false
     },
