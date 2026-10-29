@@ -3,6 +3,13 @@
   "chainId": 1,
   "rpcs": [
     {
+      "url": "https://xrpc.cl/eth",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
+    },
+    {
       "url": "https://one.valve.city/rpc/vk_demo/evm/1",
       "supportsIpv6": true,
       "is_archive": true,
@@ -18,6 +25,13 @@
     },
     {
       "url": "https://ethereum-rpc.publicnode.com",
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://public.1rpc.io/eth",
       "supportsIpv6": true,
       "is_archive": false,
       "supports_forking": false,
@@ -164,13 +178,6 @@
       "is_fast_fork_capable": false
     },
     {
-      "url": "https://ethereum-json-rpc.stakely.io",
-      "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": true,
-      "is_fast_fork_capable": true
-    },
-    {
       "url": "https://eth.api.pocket.network",
       "supportsIpv6": false,
       "is_archive": true,
@@ -239,13 +246,6 @@
       "is_archive": false,
       "supports_forking": false,
       "is_fast_fork_capable": false
-    },
-    {
-      "url": "https://1.rpc.thirdweb.com",
-      "supportsIpv6": true,
-      "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": true
     }
   ]
 }
