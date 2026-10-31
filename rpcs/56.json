@@ -3,6 +3,13 @@
   "chainId": 56,
   "rpcs": [
     {
+      "url": "https://lb.routeme.sh/rpc/evm/56",
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
+    },
+    {
       "url": "https://rpc.nodeflare.app/bnb/public",
       "supportsIpv6": true,
       "is_archive": false,
@@ -152,7 +159,7 @@
     {
       "url": "https://bsc.meowrpc.com",
       "supportsIpv6": false,
-      "is_archive": true,
+      "is_archive": false,
       "supports_forking": false,
       "is_fast_fork_capable": false
     },
@@ -208,7 +215,7 @@
     {
       "url": "https://public-bsc-mainnet.fastnode.io",
       "supportsIpv6": true,
-      "is_archive": true,
+      "is_archive": false,
       "supports_forking": false,
       "is_fast_fork_capable": false
     },
@@ -217,13 +224,6 @@
       "supportsIpv6": true,
       "is_archive": true,
       "supports_forking": true,
-      "is_fast_fork_capable": false
-    },
-    {
-      "url": "https://rpc.swiftnodes.io/rpc/bsc",
-      "supportsIpv6": false,
-      "is_archive": false,
-      "supports_forking": false,
       "is_fast_fork_capable": false
     },
     {
@@ -252,13 +252,6 @@
       "supportsIpv6": true,
       "is_archive": false,
       "supports_forking": false,
-      "is_fast_fork_capable": false
-    },
-    {
-      "url": "https://56.rpc.thirdweb.com",
-      "supportsIpv6": true,
-      "is_archive": true,
-      "supports_forking": true,
       "is_fast_fork_capable": false
     }
   ]
