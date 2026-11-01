@@ -3,6 +3,13 @@
   "chainId": 1,
   "rpcs": [
     {
+      "url": "https://xrpc.cl/eth",
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
+    },
+    {
       "url": "https://one.valve.city/rpc/vk_demo/evm/1",
       "supportsIpv6": true,
       "is_archive": true,
@@ -76,8 +83,8 @@
       "url": "https://eth-mainnet.public.blastapi.io",
       "supportsIpv6": true,
       "is_archive": true,
-      "supports_forking": true,
-      "is_fast_fork_capable": true
+      "supports_forking": false,
+      "is_fast_fork_capable": false
     },
     {
       "url": "https://ethereum-public.nodies.app",
@@ -101,6 +108,13 @@
       "is_fast_fork_capable": false
     },
     {
+      "url": "https://eth.drpc.org",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": false
+    },
+    {
       "url": "https://mainnet.gateway.tenderly.co",
       "supportsIpv6": false,
       "is_archive": true,
@@ -119,14 +133,7 @@
       "supportsIpv6": false,
       "is_archive": true,
       "supports_forking": true,
-      "is_fast_fork_capable": false
-    },
-    {
-      "url": "https://eth.merkle.io",
-      "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": false,
-      "is_fast_fork_capable": false
+      "is_fast_fork_capable": true
     },
     {
       "url": "https://ethereum-mainnet.gateway.tatum.io",
@@ -166,6 +173,13 @@
     {
       "url": "https://0xrpc.io/eth",
       "supportsIpv6": false,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://ethereum-json-rpc.stakely.io",
+      "supportsIpv6": true,
       "is_archive": false,
       "supports_forking": false,
       "is_fast_fork_capable": false
