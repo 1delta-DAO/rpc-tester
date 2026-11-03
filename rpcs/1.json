@@ -3,13 +3,6 @@
   "chainId": 1,
   "rpcs": [
     {
-      "url": "https://xrpc.cl/eth",
-      "supportsIpv6": true,
-      "is_archive": false,
-      "supports_forking": false,
-      "is_fast_fork_capable": false
-    },
-    {
       "url": "https://one.valve.city/rpc/vk_demo/evm/1",
       "supportsIpv6": true,
       "is_archive": true,
@@ -105,7 +98,14 @@
       "supportsIpv6": false,
       "is_archive": false,
       "supports_forking": false,
-      "is_fast_fork_capable": true
+      "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://eth.drpc.org",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": false
     },
     {
       "url": "https://mainnet.gateway.tenderly.co",
@@ -239,6 +239,20 @@
       "is_archive": false,
       "supports_forking": false,
       "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://api.blockvectra.com/v1/eth_mainnet/public",
+      "supportsIpv6": true,
+      "is_archive": false,
+      "supports_forking": false,
+      "is_fast_fork_capable": false
+    },
+    {
+      "url": "https://1.rpc.thirdweb.com",
+      "supportsIpv6": true,
+      "is_archive": true,
+      "supports_forking": true,
+      "is_fast_fork_capable": true
     }
   ]
 }
